@@ -3,24 +3,24 @@ module.exports = {
     name: 'antijoin',
     run: async(client, message, args) => {
         if(!message.member.permissions.has("ADMINISTRATOR")) {
-            return message.reply('No tienes los permisos suficientes para ejecutar este comando.')
+            return message.reply('You don't have enough permissions to execute that command.')
         }
         if(args[0] === 'enable') {
             let id = db.get(`antijoin-${message.guild.id}`);
             if(!id) {
                 db.set(`antijoin-${message.guild.id}`, true);
-                return message.reply('Has activado el sistema de antijoin.')
+                return message.reply('You just enabled the anti-join protection.')
             } else {
-                return message.reply('Ya activaste el antijoin.')
+                return message.reply('You already enabled the anti-join protection.')
             }
         }
         if(args[0] === 'disable') {
             let id = db.get(`antijoin-${message.guild.id}`, true);
             if(!id) {
-                return message.reply('No has activado el sistema de antijoin.')
+                return message.reply('You didn't enable the anti-join system.')
             } else {
                 db.set(`antijoin-${message.guild.id}`, false);
-                return message.reply('Has desactivado el antijoin.')
+                return message.reply('You just disabled the anti-join system.')
             }
         }
         

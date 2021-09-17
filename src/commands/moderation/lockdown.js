@@ -2,7 +2,7 @@ module.exports = {
     name: 'lockdown',
     run: (client, message, args) => {
         if(!message.member.permissions.has("ADMINISTRATOR")) {
-            return message.reply('You don't have enough permissions to execute that command.')
+            return message.reply('You dont have enough permissions to execute that command.')
         }
         console.log(message.guild.roles.everyone.id)
 

@@ -2,7 +2,7 @@ module.exports = {
     name: 'lockdown',
     run: (client, message, args) => {
         if(!message.member.permissions.has("ADMINISTRATOR")) {
-            return message.reply('No tienes los permisos suficientes para ejecutar este comando.')
+            return message.reply('You don't have enough permissions to execute that command.')
         }
         console.log(message.guild.roles.everyone.id)
 
@@ -17,14 +17,14 @@ module.exports = {
                     SEND_MESSAGES: false
                   })
                })
-               message.channel.send('Todos los canales del servidor han sido bloqueados por seguridad.')
+               message.channel.send('Every single channel from this server has been blocked.')
         } else if(args[0] === 'disable') {
             message.guild.channels.cache.forEach((channel)=>{
                 channel.permissionOverwrites.create(message.guild.roles.everyone, {
                     SEND_MESSAGES: true
                   })
                })
-               message.channel.send('Todos los canales del servidor han sido desbloqueados.')
+               message.channel.send('Every channel in the server has been unlocked.')
         }
     }
 }

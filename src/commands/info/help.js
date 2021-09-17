@@ -4,8 +4,8 @@ module.exports = {
     name: 'help',
     run: async(client, message, args) => {
         const embed = new MessageEmbed()
-        .setTitle('Comandos del bot.')
-        .setDescription('\`->antichannelcreate\` Desactiva la creación de canales en el servidor.\n\`->antichanneldelete\` Desactiva la eliminación de canales en el servidor (No entra en conflicto con el Anti-ChannelCreate, ya que no elimina canales que el bot crea, solo los que crean los usuarios o otros bots).\n\`->antiinvite\` Bloquea que posteen invitaciones en el servidor.\n\`->antijoin\` Evita que nuevos miembros se unan.\n\`->lockdown\` Bloquea todos los canales del servidor para que nadie pueda enviar mensajes en los canales.')
+        .setTitle('Bot commands.')
+        .setDescription('\`->antichannelcreate\` Disable the channel creation in the server.\n\`->antichanneldelete\` Disable channel deletion on the server. (Restores deleted channels.)\n\`->antiinvite\` Block any invites from being posted in the server.\n\`->antijoin\` Instantly Kick any member that joins.\n\`->lockdown\` Lock the Send Messages permission from every channel.\n\nCommand Usage:\n\`->command enable\` Enable the respective system.\n\`->command disable\` Disable the respective system.')
         .setFooter(`Comando ejecutado por: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
         .setColor("RANDOM")
         message.channel.send({ embeds: [embed]})

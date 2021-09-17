@@ -10,7 +10,7 @@ Second, copy the Token that's been provided, and put it in a file named ".env" w
 TOKEN=your-token-here
 ```
 
-After this, you need to install Node.JS in the host machine, and type in the console or terminal inside the bot folder
+After this, enable the Privileged Gateway Intents, and then you need to install Node.JS in the host machine, and type in the console or terminal inside the bot folder
 ```
 npm install
 ```

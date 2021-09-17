@@ -3,7 +3,7 @@ module.exports = {
     name: 'antichannelcreate',
     run: async(client, message, args) => {
         if(!message.member.permissions.has("ADMINISTRATOR")) {
-            return message.reply('You don't have enough permissions to execute that command.')
+            return message.reply('You dont have enough permissions to execute that command.')
         }
         if(args[0] === 'enable') {
             let id = db.get(`antichannelcreate-${message.guild.id}`);

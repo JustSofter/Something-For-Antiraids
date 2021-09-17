@@ -3,7 +3,7 @@ module.exports = {
     name: 'antiinvite',
     run: async(client, message, args) => {
         if(!message.member.permissions.has("ADMINISTRATOR")) {
-            return message.reply('You don't have enough permissions to execute that command.')
+            return message.reply('You dont have enough permissions to execute that command.')
         }
         if(args[0] === 'enable') {
             let id = db.get(`antiinvite-${message.guild.id}`);
@@ -17,7 +17,7 @@ module.exports = {
         if(args[0] === 'disable') {
             let id = db.get(`antiinvite-${message.guild.id}`, true);
             if(!id) {
-                return message.reply('You didn't enable the anti-invite posting protection.')
+                return message.reply('You didnt enable the anti-invite posting protection.')
             } else {
                 db.set(`antiinvite-${message.guild.id}`, false);
                 return message.reply('You just disabled the anti-invite posting protection.')

@@ -17,7 +17,7 @@ module.exports = {
         if(args[0] === 'disable') {
             let id = db.get(`antichannelcreate-${message.guild.id}`, true);
             if(!id) {
-                return message.reply('You haven't enabled the Anti-channel creation system.')
+                return message.reply('You havent enabled the Anti-channel creation system.')
             } else {
                 db.set(`antichannelcreate-${message.guild.id}`, false);
                 return message.reply('You just enabled Channel Creation in your server.')
